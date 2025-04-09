@@ -1,0 +1,140 @@
+/* Styles for the drag and drop game will go here */
+/* Basic Body and Font Styles */
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0; /* Light grey background for contrast */
+  padding: 20px;
+  color: #333;
+}
+
+h1,
+h2 {
+  color: #e65100; /* Darker orange for headings */
+  text-align: center;
+}
+
+/* Table Styling */
+#category-table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse; /* Removes double borders */
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#category-table th,
+#category-table td {
+  border: 1px solid #ccc; /* Light grey border for cells */
+  padding: 10px;
+  text-align: left;
+  vertical-align: top; /* Align content to the top */
+}
+
+#category-table thead th {
+  background-color: #ff6f00; /* Bright orange header */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Make the Name column narrower */
+#category-table th:first-child,
+#category-table td:first-child {
+  width: 15%;
+  font-weight: bold;
+}
+
+/* Style for table rows - alternating background could be added later if desired */
+#category-table tbody tr {
+  background-color: #fff3e0; /* Light peach/pinkish background for rows */
+}
+
+/* #category-table tbody tr:nth-child(even) {
+    background-color: #FFE0B2; /* Slightly darker shade for alternate rows
+} */
+drag-speed-cat3
+/* Drop Zone Styling */
+.drop-zone {
+  min-height: 50px; /* Ensure drop zones have some height */
+  padding: 10px;
+  border: 2px dashed #aaa; /* Dashed border to indicate it's a drop target */
+  background-color: #fff; /* White background inside the cell */
+  margin: 5px 0; /* Add some margin */
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Smooth transition for hover effects */
+}
+
+/* Visual feedback when dragging over a drop zone (added by JS) */
+.drop-zone.drag-over {
+  background-color: #e0f7fa; /* Light blue background */
+  border-color: #007bff; /* Blue border */
+}
+
+/* Style for filled drop zones (when an item is dropped - added by JS potentially) */
+.drop-zone.filled .draggable-item {
+  cursor: default; /* Change cursor when item is placed */
+}
+
+.drop-zone.filled {
+  border: 2px solid #4caf50; /* Green border indicating success */
+  padding: 0; /* Remove padding if item fills it */
+}
+
+/* Answer Key Area Styling */
+#answer-key-container {
+  display: flex; /* Use flexbox to layout columns side-by-side */
+  justify-content: space-around; /* Space out the columns */
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ff9800; /* Orange background for the whole key area */
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1000px; /* Max width for larger screens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.answer-column {
+  background-color: #ffa726; /* Slightly lighter orange for columns */
+  padding: 15px;
+  border-radius: 5px;
+  width: 45%; /* Each column takes roughly half the space */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.answer-column h3 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Draggable Item Styling */
+.draggable-item {
+  background-color: #ff6f00;
+  color: white;
+  font-size: 1.05em;
+  font-weight: bold;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border: 1px solid #e65100;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 85%;
+  line-height: 1.3;
+  cursor: grab;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+/* Style for when an item is actively being dragged (added by JS) */
+.draggable-item.dragging {
+  opacity: 0.5;
+  cursor: grabbing; /* Change cursor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.answer-column .draggable-item:last-child {
+  margin-bottom: 0;
+}

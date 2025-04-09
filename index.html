@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Server+ | Ethernet</title>
+    <!-- Confetti-->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- End Confetti-->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Server+ | Ethernet Cable Categories | Drag & Drop</h1>
+
+    <!-- Timer display -->
+    <div
+      id="timer-display"
+      style="
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: #e65100;
+        font-weight: bold;
+      "
+    >
+      Time Left: 60s
+    </div>
+
+    <!-- Table for Categories and Drop Zones -->
+    <table id="category-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Speed</th>
+          <th>Max Range (Notes)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cat 3 Row -->
+        <tr>
+          <td>Cat 3</td>
+          <td>
+            <div class="drop-zone speed-zone" data-accepts="speed-cat3"></div>
+          </td>
+          <td>
+            <div class="drop-zone notes-zone" data-accepts="notes-cat3"></div>
+          </td>
+        </tr>
+        <!-- Cat 5/5e Row -->
+        <tr>
+          <td>Cat 5 / 5e</td>
+          <td>
+            <div class="drop-zone speed-zone" data-accepts="speed-cat5"></div>
+          </td>
+          <td>
+            <div class="drop-zone notes-zone" data-accepts="notes-cat5"></div>
+          </td>
+        </tr>
+        <!-- Cat 6/6A Row -->
+        <tr>
+          <td>Cat 6 / 6A</td>
+          <td>
+            <div class="drop-zone speed-zone" data-accepts="speed-cat6"></div>
+          </td>
+          <td>
+            <div class="drop-zone notes-zone" data-accepts="notes-cat6"></div>
+          </td>
+        </tr>
+        <!-- Cat 8/8.1 Row -->
+        <tr>
+          <td>Cat 8 / 8.1</td>
+          <td>
+            <div class="drop-zone speed-zone" data-accepts="speed-cat81"></div>
+          </td>
+          <td>
+            <div class="drop-zone notes-zone" data-accepts="notes-cat81"></div>
+          </td>
+        </tr>
+        <!-- Cat 8.2 Row -->
+        <tr>
+          <td>Cat 8.2</td>
+          <td>
+            <div class="drop-zone speed-zone" data-accepts="speed-cat82"></div>
+          </td>
+          <td>
+            <div class="drop-zone notes-zone" data-accepts="notes-cat82"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Answer Key Section -->
+    <h2>Answer Key (Drag items from here)</h2>
+    <div id="answer-key-container">
+      <!-- Column for Speed Answers -->
+      <div class="answer-column" id="speed-answers">
+        <h3>Speeds</h3>
+        <!-- Draggable Speed Items with IDs added -->
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="speed-cat3"
+          id="drag-speed-cat3"
+        >
+          10 Mb
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="speed-cat5"
+          id="drag-speed-cat5"
+        >
+          100 Mb, 1 Gb
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="speed-cat6"
+          id="drag-speed-cat6"
+        >
+          10 Gb
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="speed-cat81"
+          id="drag-speed-cat81"
+        >
+          25 Gb, 40 Gb
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="speed-cat82"
+          id="drag-speed-cat82"
+        >
+          25 Gb, 40 Gb
+        </div>
+      </div>
+
+      <!-- Column for Notes Answers -->
+      <div class="answer-column" id="notes-answers">
+        <h3>Notes</h3>
+        <!-- Draggable Notes Items with IDs added -->
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="notes-cat3"
+          id="drag-notes-cat3"
+        >
+          100 meter max (For phones; obsolete)
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="notes-cat5"
+          id="drag-notes-cat5"
+        >
+          100 meter max (1GB Networks)
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="notes-cat6"
+          id="drag-notes-cat6"
+        >
+          55 m / 100 (Current Standard)
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="notes-cat81"
+          id="drag-notes-cat81"
+        >
+          30 m max range (Data Center Usage)
+        </div>
+        <div
+          class="draggable-item"
+          draggable="true"
+          data-value="notes-cat82"
+          id="drag-notes-cat82"
+        >
+          30 m max range (Data Center Usage)
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
